@@ -9,4 +9,6 @@ const (
 	DefaultPathBookmarks = "~/.local/share/bookmarks/bookmarks.json"
 	// DefaultPathCommands путь к файлу с командами по умолчанию.
 	DefaultPathCommands = "~/.local/share/bookmarks/commands.json"
+	// DefaultBrowserApp приложение для открытия ссылок в браузере по умолчанию.
+	DefaultBrowserApp = "google-chrome"
 )

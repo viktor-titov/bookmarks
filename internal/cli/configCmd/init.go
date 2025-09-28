@@ -8,29 +8,23 @@ import (
 	adapter "github.com/viktor-titov/bookmarks/internal/adapter/config"
 )
 
-func newGetCommand() *cobra.Command {
+func newInitCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "get",
-		Short: "get a configuration value by key",
+		Use:   "init",
+		Short: "set default configuration value",
 		RunE: func(cmd *cobra.Command, args []string) error {
-			if len(args) < 1 {
-				cmd.Println("key argument is required")
-				return nil
-			}
-			key := args[0]
-
 			repo, err := adapter.NewConfigRepository()
 			if err != nil {
 				return err
 			}
 
-			action := action.NewGet(repo)
-			value, err := action.Do(key)
+			action := action.NewInit(repo)
+			err = action.Do()
 			if err != nil {
 				return err
 			}
 
-			fmt.Fprintf(cmd.OutOrStdout(), "%s\n", value)
+			fmt.Fprintln(cmd.OutOrStdout(), "Configuration initialized with default values")
 
 			return nil
 		},

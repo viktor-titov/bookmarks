@@ -3,9 +3,9 @@ package models
 // Config представляет конфигурацию приложения.
 type Config struct {
 	// PathBookmarks путь к файлу c ссылками.
-	PathBookmarks string
+	PathBookmarks string `json:"pathBookmarks"`
 	// PathCommands путь к файлу c командами.
-	PathCommands string
+	PathCommands string `json:"pathCommands"`
 	// BrowserApp приложение для открытия ссылок в браузере.
-	BrowserApp string
+	BrowserApp string `json:"browserApp"`
 }

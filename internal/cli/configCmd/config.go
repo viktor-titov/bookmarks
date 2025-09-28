@@ -12,8 +12,8 @@ func NewCommand() *cobra.Command {
 		Long:  `Manage configuration settings for the application.`,
 	}
 
+	cmd.AddCommand(newInitCommand())
 	cmd.AddCommand(newListCommand())
-	cmd.AddCommand(newDeleteCommand())
 	cmd.AddCommand(newGetCommand())
 	cmd.AddCommand(newSetCommand())
 
