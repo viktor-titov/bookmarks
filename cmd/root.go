@@ -16,18 +16,13 @@ import (
 	"github.com/viktor-titov/bookmarks/internal/cli/runCmd"
 )
 
-// rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "bookmarks",
 	Short: "The bookmarks manger CLI application",
 	Long:  `Утилита для хранения и запуска short кода команда CLI и открытия в браузере ссылок из командной строки`,
-	// Uncomment the following line if your bare application
-	// has an action associated with it:
-	// Run: func(cmd *cobra.Command, args []string) { },
 }
 
-// Execute adds all child commands to the root command and sets flags appropriately.
-// This is called by main.main(). It only needs to happen once to the rootCmd.
+// Execute запускает корневую команду.
 func Execute() {
 	err := rootCmd.Execute()
 	if err != nil {
